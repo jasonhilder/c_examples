@@ -1384,7 +1384,7 @@ static char* cute_tiled_read_file_to_memory_and_null_terminate(const char* path,
 		sz = CUTE_TILED_FTELL(fp);
 		CUTE_TILED_FSEEK(fp, 0, CUTE_TILED_SEEK_SET);
 		data = (char*)CUTE_TILED_ALLOC(sz + 1, mem_ctx);
-		CUTE_TILED_FREAD(data, sz, 1, fp);
+		(void)!CUTE_TILED_FREAD(data, sz, 1, fp);
 		data[sz] = 0;
 		CUTE_TILED_FCLOSE(fp);
 	}

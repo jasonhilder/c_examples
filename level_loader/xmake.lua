@@ -1,6 +1,6 @@
 add_rules("mode.debug", "mode.release")
 
--- set_warnings("all", "error")
+set_warnings("all", "error")
 
 set_languages("c99")
 
@@ -12,6 +12,7 @@ target("level_loader")
 	add_packages("raylib")
 
     add_files("src/*.c")
+    add_headerfiles("src/*.h")
     add_headerfiles("src/libs/*.h")
 
 	set_rundir("$(projectdir)")
